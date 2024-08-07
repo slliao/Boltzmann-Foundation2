@@ -21,3 +21,5 @@ pages:
   url: cite
 - title: Funds
   url: funding
+- title: Blog
+  url:blogpost
