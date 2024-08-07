@@ -6,3 +6,12 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
  - jekyll-gist
+ - jekyll-coffeescript
+ - jekyll-commonmark-ghpages
+ - jekyll-github-metadata
+ - jekyll-paginate
+ - jekyll-relative-links
+ - jekyll-optional-front-matter
+ - jekyll-readme-index
+ - jekyll-default-layout
+ - jekyll-titles-from-headings
