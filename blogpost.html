@@ -1,5 +1,39 @@
 ---
 layout: default
 ---
-Test blog
 
+<section class="home">
+
+  <h2 class="page-heading">Follow us on Twitter!</h2>
+  
+  <a class="twitter-timeline" data-width="600" data-height="400" href="https://twitter.com/plumed_org?ref_src=twsrc%5Etfw">Tweets by plumed_org</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
+
+  <br><a href="https://twitter.com/plumed_org?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="true">Follow @plumed_org</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  
+  <h2 class="page-heading">The latest news</h2>
+
+  <h3>{{ site.posts.first.title }}</h3>
+  
+  {{ content }}
+  
+  {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+  <span class="post-meta">{{ site.posts.first.date | date: date_format }}</span>
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Archive" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts limit:11 offset:1 -%}
+      <li>
+        {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title }}</a>
+          {{ post.excerpt }}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="feed-subscribe"><img width="20" src="logo-rss.png"><a href="{{ "/feed.xml" | relative_url }}">  Subscribe</a></p>
+  {%- endif -%}
+
+</div>
