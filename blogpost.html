@@ -1,12 +1,9 @@
 ---
 layout: default
 ---
-{% assign pinned = site.posts | where: "pin", "true" %}
-{% assign default = site.posts | where_exp: "item", "item.pin != true and item.hidden != true" %}
-{% assign combined_posts = pinned | concat: default %}
 
 <div id="post-list">
-  {% for post in combined_posts %}
+  {% for post in site.posts %}
     <div class="post-preview">
       <h2>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
